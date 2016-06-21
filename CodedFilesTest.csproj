@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>CodedFilesTest</RootNamespace>
+    <AssemblyName>CodedFilesTest</AssemblyName>
+    <OutputPath>bin</OutputPath>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{31C63BD7-55EE-4F12-8242-C1261C7B7142}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArtOfTest.WebAii, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=4fd5f65be123776c">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="ArtOfTest.WebAii.Design, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=4fc62bbc3827ab1d">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Telerik.TestingFramework.Controls.KendoUI, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Html, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Xaml, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.WebAii.Controls.Xaml.Wpf, Version=2016.1.330.0, Culture=neutral, PublicKeyToken=528163f3e645de45">
+      <SpecificVersion>false</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GetVariableAndNavigate.tstest" />
+    <None Include="NavigateToRandomAndSetVariable.tstest" />
+    <None Include="SetTextWithAngularExtension.tstest" />
+    <None Include="Settings.aiis" />
+    <Compile Include="Code\Extensions.cs" />
+    <Compile Include="Code\VariableContext.cs" />
+    <Compile Include="GetVariableAndNavigate.tstest.cs">
+      <DependentUpon>GetVariableAndNavigate.tstest</DependentUpon>
+    </Compile>
+    <Compile Include="NavigateToRandomAndSetVariable.tstest.cs">
+      <DependentUpon>NavigateToRandomAndSetVariable.tstest</DependentUpon>
+    </Compile>
+    <Compile Include="SetTextWithAngularExtension.tstest.cs">
+      <DependentUpon>SetTextWithAngularExtension.tstest</DependentUpon>
+    </Compile>
+    <None Include="TestLists\InterconnectedTests.aiilist" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GetVariableAndNavigate.resx">
+      <DependentUpon>GetVariableAndNavigate.tstest</DependentUpon>
+    </None>
+    <None Include="NavigateToRandomAndSetVariable.resx">
+      <DependentUpon>NavigateToRandomAndSetVariable.tstest</DependentUpon>
+    </None>
+    <None Include="SetTextWithAngularExtension.resx">
+      <DependentUpon>SetTextWithAngularExtension.tstest</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Name="CodedFilesTest" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Condition="true" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Condition="true" Project="$(MSBuildExtensionsPath)\Telerik\WebUITestStudio\Telerik.WebUITestStudio.targets" />
+</Project>
