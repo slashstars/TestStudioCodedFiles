@@ -12,6 +12,7 @@ namespace CodedFilesTest
     {
         public static void SetInputText(this HtmlControl element, string text)
         {
+            //Set test and fire change event
             string script =
                 "angular.element(" + element.ClientSideLocator + ").val('" + text + "').triggerHandler('change')";
             Manager.Current.ActiveBrowser.Actions.InvokeScript(script);
