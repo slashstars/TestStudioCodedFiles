@@ -12,6 +12,7 @@ namespace CodedFilesTest
     {
         public static void SetInputText(this HtmlControl element, string text)
         {
+            //Angular needs change event to update the bindings, so trigger it
             string script =
                 "angular.element(" + element.ClientSideLocator + ").val('" + text + "').triggerHandler('change')";
             Manager.Current.ActiveBrowser.Actions.InvokeScript(script);
